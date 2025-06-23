@@ -1,7 +1,10 @@
 import sys
 from llama_cpp import Llama
 
-
+if len(sys.argv) < 2:
+    print("Model path not provided as argument")
+    print("Eg. Usage: $ python chatapp.py path/to/model.gguf")
+    sys.exit(1)
 
 llm = Llama(
     model_path=sys.argv[1],
